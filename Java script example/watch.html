@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoadTime(){
+            var now = new Date();
+            var time = now.toLocaleTimeString();
+            document.querySelector("h1").innerHTML = time;
+        }
+        function bodyload(){
+           window.timer = setInterval(LoadTime,1000);
+        }
+        function StopClick(){
+            clearInterval(timer);
+        }
+        function StartClick(){
+            bodyload();
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h1 align="center"></h1>
+    <button onclick="StopClick()">Stop</button>
+    <button onclick="StartClick()">Start</button>
+</body>
+</html>
