@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function Msg1(){
+            document.querySelector("h1").innerHTML = "Hello !";
+        }
+        function Msg2(){
+            document.querySelector("h1").innerHTML = "How Are You?";
+        }
+        function Msg3(){
+            document.querySelector("h1").innerHTML = "Welcome to JavaScript";
+        }
+        var msg1, msg2, msg3;
+        function bodyload(){
+           msg1 =  setTimeout(Msg1, 3000);
+           msg2 = setTimeout(Msg2, 5000);
+           msg3 = setTimeout(Msg3, 8000);
+        }
+        function ClearClick(){
+          clearTimeout(msg2);
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+    <h1 align="center"></h1>
+    <button onclick="ClearClick()">Clear 2nd</button>
+</body>
+</html>
